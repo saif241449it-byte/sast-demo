@@ -23,7 +23,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat 'mvn sonar:sonar -Dsonar.projectKey=sast-demo -Dsonar.projectName=SAST-Demo'
+                    bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:5.1.0.4751:sonar -Dsonar.projectKey=sast-demo -Dsonar.projectName=SAST-Demo'
                 }
             }
         }
